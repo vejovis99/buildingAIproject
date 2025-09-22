@@ -1,79 +1,40 @@
-<!-- This is the markdown template for the final project of the Building AI course, 
-created by Reaktor Innovations and University of Helsinki. 
-Copy the template, paste it to your GitHub README and edit! -->
-
-# Buiding AI Projecct - Minnalearn
-
-Final project for the Building AI course
+# Connect four
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
+A game of connect four against AI.
+
+![image](https://github.com/gdsc-ipsacademy/Connect-Four-Game/assets/81830617/9ffb20cd-9c8e-40fd-9fb6-8942ffdb02a1)
 
 
-## Background
-
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
-
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+![image](https://github.com/gdsc-ipsacademy/Connect-Four-Game/assets/81830617/469ed5b2-7d2f-4d5f-93b9-31bc19134d24)
 
 
-## How is it used?
+# Directory structure
+- [variables.py](https://github.com/gdsc-ipsacademy/Connect-Four-Game/blob/main/src/variables.py) contains all the GLOBAL variables for the project so that they are easy to find and change if ever needed. Helps in writing clean code.
+- [functions.py](https://github.com/gdsc-ipsacademy/Connect-Four-Game/blob/main/src/functions.py) contains all the functions used in the game loop. This helps in bundling the functions together so that they are easy to find, edit and are easily accessible throughout the project. Keeps the main file clean as well.
+- [ui_components.py](https://github.com/gdsc-ipsacademy/Connect-Four-Game/blob/main/src/ui_components.py) conatins all the UI elements for the game. Helps in keeping UI methods and other methods separate.
+- [score_ai.py](https://github.com/gdsc-ipsacademy/Connect-Four-Game/blob/main/src/score_ai.py) contains the functions for the score based AI version.
+- [minmax_ai.py](https://github.com/gdsc-ipsacademy/Connect-Four-Game/blob/main/src/minmax_ai.py) contains the functions for the minmax algorithm based AI version.
+- [game.py](https://github.com/gdsc-ipsacademy/Connect-Four-Game/blob/main/src/game.py) contains the game loop and executes the software.
 
-Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
+# Version information
+- [v0.1.0](https://github.com/gdsc-ipsacademy/Connect-Four-Game/releases/tag/v0.1.0) contains the base game without AI. It just has human vs human mode where turns switch between both until the game is over.
+- [v1.0.1](https://github.com/gdsc-ipsacademy/Connect-Four-Game/releases/tag/v1.0.1) contains the game with an AI that uses scoring method to try and beat the human player. This version contains just human vs AI mode where turns switch between both until the game is over.
+- [v1.3.0](https://github.com/gdsc-ipsacademy/Connect-Four-Game/releases/tag/v1.3.0) contains the game with an AI that uses minmax algorithm with alpha-beta pruning, calculating upto depth 7, which makes it impossible to beat. This version contains just human vs AI mode where turns switch between both until the game is over. This version also includes sound effects for the game.
+- [v1.3.1](https://github.com/gdsc-ipsacademy/Connect-Four-Game/releases/tag/v1.3.1) contains the game with different difficulty levels from easy to god mode for the user to choose from at the start of the game. This version contains just human vs AI mode where turns switch between both until the game is over.
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+# How to run the game?
+1. Clone the repository to your machine following [how to clone a repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) documentation.
+2. Create a virtual environment by using the command `python<version> -m venv <virtual-environment-name>` in your terminal.
 
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
+(If you don't have venv installed, you can install it by running `pip install virtualenv` in your terminal.)
 
-This is how you create code examples:
-```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
+3. Activate the virtual environment by running either `<virtual-environment-name>/Scripts/activate.bat` in CMD or `<virtual-environment-name>/Scripts/Activate.ps1` in PowerShell.
 
-   totPop = sum(pop)
-   totFish = sum(fishers)
+(To deactivate the virtual environment run the command `deactivate`.)
 
-   # write your solution here
+4. Install the requirements in the virtual environment by running `pip install -r requirements.txt`.
+5. Run the game by running `python -u <directory path>\Connect-Four-Game\src\game.py`
 
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
-```
-
-
-## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-
-## Challenges
-
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
-
-## What next?
-
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
-
-
-## Acknowledgments
-
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
+If you don't want to go through the hassle of creating a virtual environment, just run the commands in steps 4 and 5.
